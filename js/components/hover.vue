@@ -1,14 +1,16 @@
 <template>
   <div class="hover">
-    <div class="contain">{{contant}}</div>
-    <div class="bottom"></div>
+    <div class="contain"
+         :class="isActive?'isClick':''">{{contant}}</div>
+    <div :class="isActive?'isClick1':''"
+         class="bottom"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: "hover",
-  props: ["contant"]
+  props: ["contant", "isActive"]
 }
 </script>
 
@@ -18,7 +20,10 @@ export default {
   height: 100%;
   position: relative;
   overflow: hidden;
+  color: #66757f;
   .contain {
+    padding: 0 10px;
+    font-size: 1rem;
     justify-content: center;
     height: 100%;
     display: flex;
@@ -32,6 +37,12 @@ export default {
     bottom: -4px;
     transition: all 0.3s;
   }
+}
+.isClick {
+  color: #09f;
+}
+.isClick1 {
+  bottom: 0px !important;
 }
 .hover:hover {
   color: #09f;

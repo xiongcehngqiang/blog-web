@@ -1,7 +1,8 @@
 <template>
   <div class="header">
     <div class="contant">
-      <hover contant="We are all in the gutter, but some of us are looking at the stars." />
+      <a href="http://www.baidu.com">
+        <hover contant="We are all in the gutter, but some of us are looking at the stars." /></a>
       <div class="right">
         <el-input v-model="seach"
                   placeholder="搜索">
@@ -10,6 +11,7 @@
              class="el-input__icon el-icon-search"></i>
         </el-input>
         <el-button type="danger">登录</el-button>
+        <el-button type="danger">注册</el-button>
       </div>
     </div>
   </div>
@@ -41,7 +43,7 @@ export default {
   color: #66757f;
   .contant {
     height: 100%;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

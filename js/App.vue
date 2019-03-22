@@ -2,18 +2,35 @@
   <div id="app">
     <!-- 公共头部组件 -->
 
-    <Head />
+    <head />
     <!-- 主页大图 -->
     <div class="banner"></div>
     <navBar />
-    <el-button @click="visible = true">按钮</el-button>
-    <router-view></router-view> <!-- 路由引入的组件将在这里被渲染 -->
+    <!-- 主要部分 -->
+    <div class="main">
+      <div class="main-contant">
+        <!-- 广告位置 -->
+        <!-- <div class="main-contant-guanggao">
+          <guanggao />
+        </div> -->
+        <!-- 文章 -->
+        <div class="main-contant-contant">
+          <contant />
+        </div>
+        <!-- 个人信息 -->
+        <div class="main-contant-personal">
+          <personal />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Head from './components/Head'
+import head from './components/head'
 import navBar from './components/navBar'
+import contant from './components/contant'
+import personal from './components/personal'
 export default {
   data () {
     return {
@@ -21,8 +38,10 @@ export default {
     }
   },
   components: {
-    Head,
-    navBar
+    head,
+    navBar,
+    personal,
+    contant
   }
 }
 </script>
@@ -30,6 +49,7 @@ export default {
 <style lang="scss">
 html,
 body {
+  font-family: "PingFang SC";
   width: 100%;
   height: 100%;
 }
@@ -61,6 +81,9 @@ td {
   margin: 0px;
   padding: 0px;
 }
+a {
+  text-decoration: none;
+}
 #app {
   width: 100%;
   height: 100%;
@@ -71,5 +94,41 @@ td {
       no-repeat center;
     background-size: cover;
   }
+  .main {
+    background: #eeeeee;
+    &-contant {
+      width: 60%;
+      margin: 0 auto;
+      min-height: 600px;
+      display: flex;
+      &-contant {
+        flex: 3;
+      }
+      &-personal {
+        flex: 1;
+      }
+    }
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #09f;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #06f;
 }
 </style>
